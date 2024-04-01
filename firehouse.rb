@@ -5,11 +5,11 @@
 class Firehouse < Formula
   desc ""
   homepage "https://github.com/izqalan/firehouse"
-  version "0.5.8"
+  version "0.5.9"
 
   on_macos do
-    url "https://github.com/izqalan/firehouse/releases/download/v0.5.8/firehouse_0.5.8_darwin_all.tar.gz"
-    sha256 "87f489a54ecc2bd425a4ba39e8e0b238504d302fec42b75f7f3dff55612a47dc"
+    url "https://github.com/izqalan/firehouse/releases/download/v0.5.9/firehouse_0.5.9_darwin_all.tar.gz"
+    sha256 "3c9206d46df9a870775fc39aae5d5c4cb935ece806994f1aac120021dfb398f1"
 
     def install
       bin.install "firehouse"
@@ -17,17 +17,17 @@ class Firehouse < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/izqalan/firehouse/releases/download/v0.5.8/firehouse_0.5.8_linux_arm64.tar.gz"
-      sha256 "015e274bc509c1fd73effef8eead1b6e41e2bf41a3464818953fd4fe25c60dbd"
+    if Hardware::CPU.intel?
+      url "https://github.com/izqalan/firehouse/releases/download/v0.5.9/firehouse_0.5.9_linux_amd64.tar.gz"
+      sha256 "a28537211c6fe5b74c37d23181773cb461d7a8a1fe32a1e53387747fae2218fd"
 
       def install
         bin.install "firehouse"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/izqalan/firehouse/releases/download/v0.5.8/firehouse_0.5.8_linux_amd64.tar.gz"
-      sha256 "b933b12e8e612dd9dc7d39ba55090160b7a36f4062cfc64d7dabe8f84e5c38fd"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/izqalan/firehouse/releases/download/v0.5.9/firehouse_0.5.9_linux_arm64.tar.gz"
+      sha256 "ea966fc97b6b441b4a7dab7ea2ecf646e0ea49697130ecb90a5d809c107e6feb"
 
       def install
         bin.install "firehouse"
